@@ -4,7 +4,7 @@ go 1.19
 
 // forked go-yaml that introduces RawYAML interface, which can be used to populate YAML fields using bytes
 // which are then encoded as a valid YAML blocks with proper indentiation
-replace gopkg.in/yaml.v3 => github.com/unix4ever/yaml v0.0.0-20210315173758-8fb30b8e5a5b
+replace gopkg.in/yaml.v3 => github.com/unix4ever/yaml/v2 v2.4.0
 
 require (
 	github.com/gomarkdown/markdown v0.0.0-20221013030248-663e2500819c
