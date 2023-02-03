@@ -12,7 +12,7 @@ replace (
 
 	// See https://github.com/siderolabs/go-loadbalancer/pull/4
 	// `go get github.com/smira/tcpproxy@combined-fixes`, then copy pseudo-version there
-	inet.af/tcpproxy => github.com/smira/tcpproxy v0.0.0-20201015133617-de5f7797b95b
+	inet.af/tcpproxy => github.com/smira/tcpproxy v0.0.0-20200125044825-b6bb9b5b8252
 )
 
 // Kubernetes dependencies sharing the same version.
@@ -30,11 +30,11 @@ require (
 require (
 	cloud.google.com/go/compute/metadata v0.2.3
 	github.com/BurntSushi/toml v1.2.1
-	github.com/aws/aws-sdk-go v1.44.184
+	github.com/aws/aws-sdk-go v1.44.194
 	github.com/beevik/ntp v0.3.0
 	github.com/cenkalti/backoff/v4 v4.2.0
-	github.com/containerd/cgroups v1.0.4
-	github.com/containerd/containerd v1.6.15
+	github.com/containerd/cgroups v1.1.0
+	github.com/containerd/containerd v1.6.16
 	github.com/containerd/typeurl v1.0.2
 	github.com/containernetworking/cni v1.1.2
 	github.com/containernetworking/plugins v1.2.0
@@ -45,7 +45,7 @@ require (
 	github.com/docker/docker v20.10.23+incompatible
 	github.com/docker/go-connections v0.4.0
 	github.com/dustin/go-humanize v1.0.1
-	github.com/emicklei/dot v1.2.0
+	github.com/emicklei/dot v1.3.0
 	github.com/fatih/color v1.14.1
 	github.com/freddierice/go-losetup/v2 v2.0.1
 	github.com/fsnotify/fsnotify v1.6.0
@@ -76,13 +76,13 @@ require (
 	github.com/mdlayher/netlink v1.7.1
 	github.com/mdlayher/netx v0.0.0-20220422152302-c711c2f8512f
 	github.com/opencontainers/image-spec v1.1.0-rc2
-	github.com/opencontainers/runtime-spec v1.0.3-0.20210326190908-1c3f411f0417
+	github.com/opencontainers/runtime-spec v1.1.0-rc.1.0.20230201033851-7301c345492a
 	github.com/packethost/packngo v0.29.0
 	github.com/pelletier/go-toml v1.9.5
 	github.com/pin/tftp v2.1.0+incompatible
 	github.com/pmorjan/kmod v1.1.0
 	github.com/prometheus/procfs v0.9.0
-	github.com/rivo/tview v0.0.0-20230104153304-892d1a2eb0da
+	github.com/rivo/tview v0.0.0-20230203122838-f0550c7918da
 	github.com/rs/xid v1.4.0
 	github.com/ryanuber/columnize v2.1.2+incompatible
 	github.com/ryanuber/go-glob v1.0.0
@@ -112,11 +112,11 @@ require (
 	github.com/spf13/cobra v1.6.1
 	github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify v1.8.1
-	github.com/u-root/u-root v0.10.0
+	github.com/u-root/u-root v0.11.0
 	github.com/ulikunitz/xz v0.5.11
 	github.com/vishvananda/netlink v1.2.1-beta.2
-	github.com/vmware-tanzu/sonobuoy v0.56.14
-	github.com/vmware/govmomi v0.30.0
+	github.com/vmware-tanzu/sonobuoy v0.56.15
+	github.com/vmware/govmomi v0.30.2
 	github.com/vmware/vmw-guestinfo v0.0.0-20220317130741-510905f0efa3
 	github.com/vultr/metadata v1.1.0
 	go.etcd.io/etcd/api/v3 v3.5.7
@@ -124,7 +124,7 @@ require (
 	go.etcd.io/etcd/client/v3 v3.5.7
 	go.etcd.io/etcd/etcdutl/v3 v3.5.7
 	go.uber.org/zap v1.24.0
-	go4.org/netipx v0.0.0-20230118030647-987e16ee2705
+	go4.org/netipx v0.0.0-20230125063823-8449b0a6169f
 	golang.org/x/net v0.5.0
 	golang.org/x/sync v0.1.0
 	golang.org/x/sys v0.4.0
@@ -135,7 +135,7 @@ require (
 	google.golang.org/protobuf v1.28.1
 	gopkg.in/yaml.v3 v3.0.1
 	k8s.io/klog/v2 v2.90.0
-	kernel.org/pub/linux/libs/security/libcap/cap v1.2.66
+	kernel.org/pub/linux/libs/security/libcap/cap v1.2.67
 	sigs.k8s.io/yaml v1.3.0
 )
 
@@ -298,7 +298,7 @@ require (
 	k8s.io/klog v1.0.0 // indirect
 	k8s.io/kube-openapi v0.0.0-20221207184640-f3cff1453715 // indirect
 	k8s.io/utils v0.0.0-20221128185143-99ec85e7a448 // indirect
-	kernel.org/pub/linux/libs/security/libcap/psx v1.2.66 // indirect
+	kernel.org/pub/linux/libs/security/libcap/psx v1.2.67 // indirect
 	sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd // indirect
 	sigs.k8s.io/kustomize/api v0.12.1 // indirect
 	sigs.k8s.io/kustomize/kyaml v0.13.9 // indirect
