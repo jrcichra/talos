@@ -187,6 +187,7 @@ var (
 		InstallDisk:            "/dev/sda",
 		InstallExtraKernelArgs: []string{"console=ttyS1", "panic=10"},
 		InstallImage:           "ghcr.io/siderolabs/installer:latest",
+		InstallEphemeralSize:   "15GB",
 		InstallBootloader:      pointer.To(true),
 		InstallWipe:            pointer.To(false),
 	}
@@ -1285,6 +1286,11 @@ type InstallConfig struct {
 	//     Indicates if MBR partition should be marked as bootable (active).
 	//     Should be enabled only for the systems with legacy BIOS that doesn't support GPT partitioning scheme.
 	InstallLegacyBIOSSupport *bool `yaml:"legacyBIOSSupport,omitempty"`
+	// description: |
+	//   Configure ephemeral partition size (in Gi)
+	// examples:
+	//   - value: 10
+	InstallEphemeralSize string `yaml:"ephemeralSize,omitempty"`
 }
 
 // InstallDiskSizeMatcher disk size condition parser.

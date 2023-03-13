@@ -1972,6 +1972,13 @@ func MountEphemeralPartition(seq runtime.Sequence, data interface{}) (runtime.Ta
 	}, "mountEphemeralPartition"
 }
 
+// MountEphemeralPartition mounts the ephemeral partition without resizing.
+func MountEphemeralPartitionWithoutResize(seq runtime.Sequence, data interface{}) (runtime.TaskExecutionFunc, string) {
+	return func(ctx context.Context, logger *log.Logger, r runtime.Runtime) error {
+		return mount.SystemPartitionMount(r, logger, constants.EphemeralPartitionLabel)
+	}, "mountEphemeralPartition"
+}
+
 // UnmountEphemeralPartition unmounts the ephemeral partition.
 func UnmountEphemeralPartition(seq runtime.Sequence, data interface{}) (runtime.TaskExecutionFunc, string) {
 	return func(ctx context.Context, logger *log.Logger, r runtime.Runtime) (err error) {

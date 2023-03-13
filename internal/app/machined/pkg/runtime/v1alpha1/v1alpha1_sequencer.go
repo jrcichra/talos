@@ -167,6 +167,7 @@ func (*Sequencer) Install(r runtime.Runtime) []runtime.Phase {
 func (*Sequencer) Boot(r runtime.Runtime) []runtime.Phase {
 	phases := PhaseList{}
 
+	shouldEphemeralResize := r.Config().Machine().Install().EphemeralSize() == ""
 	wipe := procfs.ProcCmdline().Get(constants.KernelParamWipe).First()
 	if wipe != nil && *wipe == "system" {
 		return phases.Append("wipeSystemDisk", ResetSystemDisk).Append("reboot", Reboot)
@@ -206,9 +207,13 @@ func (*Sequencer) Boot(r runtime.Runtime) []runtime.Phase {
 		"sharedFilesystems",
 		SetupSharedFilesystems,
 	).AppendWhen(
-		r.State().Platform().Mode() != runtime.ModeContainer,
+		r.State().Platform().Mode() != runtime.ModeContainer && shouldEphemeralResize,
 		"ephemeral",
 		MountEphemeralPartition,
+	).AppendWhen(
+		r.State().Platform().Mode() != runtime.ModeContainer && !shouldEphemeralResize,
+		"ephemeral",
+		MountEphemeralPartitionWithoutResize,
 	).Append(
 		"var",
 		SetupVarDirectory,

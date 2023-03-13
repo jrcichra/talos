@@ -783,7 +783,7 @@ func init() {
 			FieldName: "install",
 		},
 	}
-	InstallConfigDoc.Fields = make([]encoder.Doc, 8)
+	InstallConfigDoc.Fields = make([]encoder.Doc, 9)
 	InstallConfigDoc.Fields[0].Name = "disk"
 	InstallConfigDoc.Fields[0].Type = "string"
 	InstallConfigDoc.Fields[0].Note = ""
@@ -848,6 +848,13 @@ func init() {
 	InstallConfigDoc.Fields[7].Note = ""
 	InstallConfigDoc.Fields[7].Description = "Indicates if MBR partition should be marked as bootable (active).\nShould be enabled only for the systems with legacy BIOS that doesn't support GPT partitioning scheme."
 	InstallConfigDoc.Fields[7].Comments[encoder.LineComment] = "Indicates if MBR partition should be marked as bootable (active)."
+	InstallConfigDoc.Fields[8].Name = "ephemeralSize"
+	InstallConfigDoc.Fields[8].Type = "string"
+	InstallConfigDoc.Fields[8].Note = ""
+	InstallConfigDoc.Fields[8].Description = "Configure ephemeral partition size (in Gi)"
+	InstallConfigDoc.Fields[8].Comments[encoder.LineComment] = "Configure ephemeral partition size (in Gi)"
+
+	InstallConfigDoc.Fields[8].AddExample("", 10)
 
 	InstallDiskSelectorDoc.Type = "InstallDiskSelector"
 	InstallDiskSelectorDoc.Comments[encoder.LineComment] = "InstallDiskSelector represents a disk query parameters for the install disk lookup."
