@@ -126,4 +126,11 @@ var systemPartitions = map[string]FormatOptions{
 		Size:           0,
 		Force:          true,
 	},
+	constants.EmptyPartitionLabel: {
+		Label:          constants.EmptyPartitionLabel,
+		PartitionType:  LinuxFilesystemData,
+		FileSystemType: FilesystemTypeNone,
+		Size:           0,
+		Force:          true,
+	},
 }

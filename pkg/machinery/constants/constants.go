@@ -158,6 +158,10 @@ const (
 	// mounting at the data path.
 	EphemeralPartitionLabel = "EPHEMERAL"
 
+	// EmptyPartitionLabel is the label of the partition to use for
+	// the rest of the disk which has no filesystem (good for rook or longhorn)
+	EmptyPartitionLabel = "EMPTY"
+
 	// EphemeralMountPoint is the label of the partition to use for mounting at
 	// the data path.
 	EphemeralMountPoint = "/var"

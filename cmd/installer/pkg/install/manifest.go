@@ -157,7 +157,14 @@ func NewManifest(label string, sequence runtime.Sequence, bootPartitionFound boo
 		ephemeralTarget.FormatOptions.Size = size
 	}
 
-	targets := []*Target{efiTarget, biosTarget, bootTarget, metaTarget, stateTarget, ephemeralTarget}
+	emptyTarget := EmptyTarget(opts.Disk, &Target{
+		PreserveContents: bootPartitionFound,
+		FormatOptions: &partition.FormatOptions{
+			FileSystemType: partition.FilesystemTypeNone,
+		},
+	})
+
+	targets := []*Target{efiTarget, biosTarget, bootTarget, metaTarget, stateTarget, ephemeralTarget, emptyTarget}
 
 	if !opts.Force {
 		for _, target := range targets {

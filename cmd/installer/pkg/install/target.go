@@ -90,6 +90,8 @@ func ParseTarget(label, deviceName string) (*Target, error) {
 		return StateTarget(deviceName, NoFilesystem), nil
 	case constants.EphemeralPartitionLabel:
 		return EphemeralTarget(deviceName, NoFilesystem), nil
+	case constants.EmptyPartitionLabel:
+		return EmptyTarget(deviceName, NoFilesystem), nil
 	default:
 		return nil, fmt.Errorf("label %q is not supported", label)
 	}
@@ -150,6 +152,16 @@ func StateTarget(device string, extra *Target) *Target {
 func EphemeralTarget(device string, extra *Target) *Target {
 	target := &Target{
 		FormatOptions: partition.NewFormatOptions(constants.EphemeralPartitionLabel),
+		Device:        device,
+	}
+
+	return target.enhance(extra)
+}
+
+// EmptyTarget builds the default empty target.
+func EmptyTarget(device string, extra *Target) *Target {
+	target := &Target{
+		FormatOptions: partition.NewFormatOptions(constants.EmptyPartitionLabel),
 		Device:        device,
 	}
 
